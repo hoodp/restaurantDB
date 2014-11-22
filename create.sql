@@ -36,4 +36,3 @@ CREATE TABLE Meal
 	--price must be greater than sum of ingredients
 	--??
 );
-

@@ -78,3 +78,43 @@ INSERT INTO IsInMeal VALUES (5, 1, 3);
 INSERT INTO IsInMeal VALUES (3, 2, 1);
 INSERT INTO IsInMeal VALUES (4, 2, 6);
 INSERT INTO IsInMeal VALUES (5, 2, 2);
+--
+--Menu ( [id], name )
+CREATE TABLE Menu
+(
+	id INTEGER NOT NULL,
+	name CHAR(20) NOT NULL,
+	--
+	--Primary key
+	CONSTRAINT menuIC1 PRIMARY KEY (id)
+);
+--
+--Populate Menu Table
+INSERT INTO Menu VALUES (0, 'Fall-Weekend');
+INSERT INTO Menu VALUES (1, 'Fall');
+INSERT INTO Menu VALUES (2, 'Summer-Weekend');
+INSERT INTO Menu VALUES (3, 'Summer');
+--
+--IsOnMenu ( [mealID, menuID] )
+CREATE TABLE IsOnMenu
+(
+	mealID INTEGER NOT NULL,
+	menuID INTEGER NOT NULL,
+	--
+	--Primary key
+	CONSTRAINT IsOnMenuIC1 PRIMARY KEY (mealID, menuID),
+	CONSTRAINT IsOnMenuIC2 FOREIGN KEY (mealID) REFERENCES Meal (id)  ON DELETE CASCADE,
+	CONSTRAINT IsOnMenuIC3 FOREIGN KEY (menuID) REFERENCES Menu (id)  ON DELETE CASCADE
+);
+--
+--Populate IsOnMenuTable
+INSERT INTO IsOnMenu VALUES (0, 0);
+INSERT INTO IsOnMenu VALUES (0, 1);
+INSERT INTO IsOnMenu VALUES (0, 2);
+INSERT INTO IsOnMenu VALUES (0, 3);
+INSERT INTO IsOnMenu VALUES (1, 0);
+INSERT INTO IsOnMenu VALUES (1, 1);
+INSERT INTO IsOnMenu VALUES (1, 2);
+INSERT INTO IsOnMenu VALUES (1, 3);
+INSERT INTO IsOnMenu VALUES (2, 1);
+INSERT INTO IsOnMenu VALUES (2, 3);

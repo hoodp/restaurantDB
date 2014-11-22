@@ -28,7 +28,6 @@ SELECT * from MadeBy;
 SELECT * from IsOnSeMenu;
 SELECT * from IsOnSpecMenu;
 SELECT * from Substitutes;
-
 --
 < The SQL queries>
 /*Include the following for each query:

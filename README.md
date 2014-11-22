@@ -5,7 +5,7 @@ CIS 353 group project
 
 Relational Schema
 
-Ingredient (iName*, iSize*, cost, calories, isVeg, shelfLife, isGF, qty ) <== not BCNF/changed to ID key
+*Ingredient (iName*, iSize*, cost, calories, isVeg, shelfLife, isGF, qty ) <== not BCNF/changed to ID key*
 
 Ingredient (iID*, iName, iSize, cost, calories, qty)
 
@@ -23,7 +23,7 @@ SeasonalMenu ( seID*, name )
 
 SpecialsMenu ( cSSN*, spID*, name )
 
-Season ( iName*, iSize*, season )<==changed ingredient key
+*Season ( iName*, iSize*, season )*<==changed ingredient key
 
 Season (iID*, season)
 

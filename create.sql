@@ -4,7 +4,7 @@
 --Ingredient ( iName, iSize, cost, calories, isVeg, shelfLife, isGF, qty )
 CREATE TABLE Ingredient 
 (
-	iName CHAR NOT NULL,
+	iName CHAR(20) NOT NULL,
 	iSize FLOAT NOT NULL,
 	cost  FLOAT NOT NULL,
 	calories INTEGER NOT NULL,
@@ -24,8 +24,8 @@ CREATE TABLE Ingredient
 CREATE TABLE Meal
 (
 	meID INTEGER NOT NULL,
-	meName CHAR NOT NULL,
-	timeOfDay CHAR,
+	meName CHAR(20) NOT NULL,
+	timeOfDay CHAR(20),
 	ldo DATE,
 	price FLOAT NOT NULL,
 	--
@@ -36,3 +36,6 @@ CREATE TABLE Meal
 	--price must be greater than sum of ingredients
 	--??
 );
+INSERT INTO Ingredient VALUES ('sirloin', 9, 5.50, 200, 'F', 'T', 2, 40);
+INSERT INTO Ingredient VALUES ('mashed potato', 4, .92, 250, 'T', 'T', 3, 90);
+INSERT INTO Meal VALUES (0, 'House Steak', 'dinner', TO_DATE('11/19/14','MM/DD/YY'), 12.50);

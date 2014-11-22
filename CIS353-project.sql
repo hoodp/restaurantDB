@@ -19,15 +19,15 @@ COMMIT
 SELECT * from Ingredient;
 SELECT * from Meal;
 SELECT * from Chef;
-SELECT * from SeasonalMenu;
+SELECT * from Menu;
 SELECT * from SpecialsMenu;
 SELECT * from Season;
 SELECT * from DaysOfWeek;
 SELECT * from IsInMeal;
 SELECT * from MadeBy;
-SELECT * from IsOnSeMenu;
-SELECT * from IsOnSpecMenu;
-SELECT * from Substitutes;
+SELECT * from IsOnMenu;
+SELECT * from IsOnSpecialsMenu;
+SELECT * from Sub;
 --
 < The SQL queries>
 /*Include the following for each query:

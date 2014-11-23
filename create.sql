@@ -107,7 +107,7 @@ CREATE TABLE IsOnMenu
 	CONSTRAINT IsOnMenuIC3 FOREIGN KEY (menuID) REFERENCES Menu (id)  ON DELETE CASCADE
 );
 --
---Populate IsOnMenuTable
+--Populate IsOnMenu Table
 INSERT INTO IsOnMenu VALUES (0, 0);
 INSERT INTO IsOnMenu VALUES (0, 1);
 INSERT INTO IsOnMenu VALUES (0, 2);
@@ -118,3 +118,23 @@ INSERT INTO IsOnMenu VALUES (1, 2);
 INSERT INTO IsOnMenu VALUES (1, 3);
 INSERT INTO IsOnMenu VALUES (2, 1);
 INSERT INTO IsOnMenu VALUES (2, 3);
+--
+--Chef ( [id], name, trainee)
+CREATE TABLE Chef
+(
+	id INTEGER NOT NULL,
+	name CHAR(50) NOT NULL,
+	trainee INTEGER,
+	--
+	--Primary Key
+	CONSTRAINT ChefIC1 PRIMARY KEY (id),
+	-- 
+	-- trainee cannot be equal to id
+	CONSTRAINT ChefIC2 CHECK (id <> trainee)
+);
+--
+--Populate Chef Table
+INSERT INTO Chef VALUES (1, 'Paul Wood', NULL);
+INSERT INTO Chef VALUES (2, 'James Johnson', 1);
+INSERT INTO Chef VALUES (3, 'Judy Fleming', NULL);
+INSERT INTO Chef VALUES (4, 'Larry Greenwald', 3);
